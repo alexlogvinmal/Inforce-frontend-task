@@ -1,12 +1,12 @@
 # Inforce frontend task
 
-######Actual task
+###### Actual task
 
 We need to build a product list web app. The goal is to simulate a shop app.
 There are two primary views: the product list view and the product view.
 Products
 
-######List View:
+###### List View:
 
 On the list view, I can add products by clicking on the add button(after that modal window
 should occur with different inputs which allows me to set product details, also inside modal
@@ -17,7 +17,7 @@ empty product without setting data for him.
 The list view should always sort alphabetically first, and then by count. Also I can select how
 products should be sorted from the dropdown menu.
 
-######Product View:
+###### Product View:
 
 On the product view, I can see all of the details of the product. After pressing the edit
 button I can see the modal with different inputs which allows me to change product details.
