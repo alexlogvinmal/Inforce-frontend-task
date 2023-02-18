@@ -4,9 +4,9 @@
 
 We need to build a product list web app. The goal is to simulate a shop app.
 There are two primary views: the product list view and the product view.
-Products
 
-###### List View:
+
+###### Products List View:
 
 On the list view, I can add products by clicking on the add button(after that modal window
 should occur with different inputs which allows me to set product details, also inside modal
