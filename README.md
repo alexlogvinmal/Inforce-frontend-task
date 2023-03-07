@@ -23,7 +23,7 @@ On the product view, I can see all of the details of the product. After pressing
 button I can see the modal with different inputs which allows me to change product details.
 Also you can add and delete comments for the current product.
 
-
+### `npm install`
 
 ## First of all launch the json-server
 
