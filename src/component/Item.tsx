@@ -23,7 +23,6 @@ export function Item() {
     let newdata = useProduct();
     const { id } = useParams();
 
-
     let error = true;
     if (id == undefined) {
         error = false;
