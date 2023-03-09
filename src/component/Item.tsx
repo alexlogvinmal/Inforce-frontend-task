@@ -1,10 +1,13 @@
+import { useEffect, useState } from 'react';
+import { Post, PostState } from '../redux/types';
+import { fetchPosts } from '../redux/data/action';
+import { useAppDispatch, useAppSelector } from '../redux/hook';
 import axios from 'axios'
 import { useParams } from 'react-router-dom';
 import './item.css';
-import { useProduct } from '../hook/product';
 import { Link } from 'react-router-dom';
 import { Loader } from './Loader';
-import { useState } from 'react';
+
 
 
 
@@ -20,7 +23,14 @@ export function Item() {
     const [valueWeight, setWeight] = useState('');
     const [valueComments, setComments] = useState(Object);
     const [valueDescription, setValueDescription] = useState('');
-    let newdata = useProduct();
+
+    const postState: PostState = useAppSelector((state: any) => state.postReducer);
+    const dispatch = useAppDispatch();
+    useEffect(() => {
+        dispatch(fetchPosts());
+    }, [dispatch]);
+
+    let newdata = postState.data;
     const { id } = useParams();
 
     let error = true;

@@ -1,12 +1,22 @@
+import { useEffect, useState } from 'react';
+import { Post, PostState } from '../redux/types';
+import { fetchPosts } from '../redux/data/action';
+import { useAppDispatch, useAppSelector } from '../redux/hook';
 import axios from 'axios'
-import { useProduct } from '../hook/product';
 import { Product } from './Product';
 import './main.css';
-import { useState } from 'react';
+
 
 
 export function Main() {
-  const product = useProduct();
+
+  const postState: PostState = useAppSelector((state: any) => state.postReducer);
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+      dispatch(fetchPosts());
+  }, [dispatch]);
+
+  const product = postState.data;
   const [modal, setModal] = useState(false);
 
   const [selected, setSelected] = useState('A-Z & COUNT');

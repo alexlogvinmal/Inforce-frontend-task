@@ -17,7 +17,7 @@ export interface Post {
   }
   
   export interface PostState {
-    posts: Post[];
+    data: Post[];
     loading: boolean;
     error: string | null;
   }
