@@ -2,9 +2,10 @@ import { useEffect, useState } from 'react';
 import { Post, PostState } from '../redux/types';
 import { fetchPosts } from '../redux/data/action';
 import { useAppDispatch, useAppSelector } from '../redux/hook';
-import axios from 'axios'
+import axios from 'axios';
 import { Product } from './Product';
 import './main.css';
+import { createPost } from '../redux/functional/action';
 
 
 
@@ -146,7 +147,7 @@ export function Main() {
         comments: []
       };
 
-      axios.post('http://localhost:8000/data', data);
+      dispatch(createPost(data));
       setModal(false)
       setImageUrl('')
       setName('')

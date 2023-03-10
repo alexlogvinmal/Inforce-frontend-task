@@ -1,10 +1,10 @@
 import { postReducer } from './redux/data/reducer';
-import { loginReducer } from './redux/functional/reducer';
+import { addPostReducer, deletePostReducer } from './redux/functional/reducer';
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 
 
 
-const reducer = {postReducer,loginReducer}
+const reducer = {postReducer,addPostReducer, deletePostReducer }
 const middleware = getDefaultMiddleware({
     immutableCheck:false,
     thunk:true,

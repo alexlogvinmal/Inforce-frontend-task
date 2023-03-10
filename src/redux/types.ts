@@ -27,12 +27,44 @@ export interface Post {
     FETCH_POSTS_SUCCESS = 'FETCH_POSTS_SUCCESS',
     FETCH_POSTS_FAILED = 'FETCH_POSTS_FAILED',
   }
-  
-  export enum LogInActionTypes {
-    SUCCESS_LOGIN = 'SUCCESS_LOGIN',
-    LOGOUT_LOGIN = 'LOGOUT_LOGIN',
+
+////////////add
+
+  export interface Addpost {
+    imageUrl: string,
+    name: string,
+    count: number,
+    size:{
+        width: number,
+        height: number
+    },
+    weight: string
   }
   
-  export interface LogInStatus {
-    status: boolean;
+  export interface AddPostState {
+    posts: Addpost[];
   }
+  
+  export const ADD_POST = 'ADD_POST';
+  
+  interface AddPostAction {
+    type: typeof ADD_POST;
+    payload: Addpost;
+  }
+  
+  export type AddPostActionTypes = AddPostAction;
+
+//////////////////delete
+
+  export interface DeletePostState {
+    id: number;
+  }
+  
+  export const DELETE_POST = 'DELETE_POST';
+  
+  interface DeletePostAction {
+    type: typeof DELETE_POST;
+    payload: DeletePostState;
+  }
+  
+  export type DeletePostActionTypes = DeletePostAction;

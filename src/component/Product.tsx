@@ -3,6 +3,8 @@ import { IProduct } from '../models';
 import './product.css';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import { deletePost } from '../redux/functional/action';
+import { useAppDispatch, useAppSelector } from '../redux/hook';
 
 interface ProductProps {
     data: IProduct
@@ -11,8 +13,9 @@ interface ProductProps {
 
 export function Product({ data }: ProductProps) {
     const [deletemodal, setDeletemodal] = useState(false);
+    const dispatch = useAppDispatch();
     function dleteItem(event: any) {
-        axios.delete(`http://localhost:8000/data/${data.id}`)
+        dispatch(deletePost(data.id));
         setDeletemodal(false);
     }
 

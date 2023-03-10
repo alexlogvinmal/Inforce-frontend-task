@@ -1,22 +1,32 @@
-import { LogInActionTypes, LogInStatus } from '../types';
+import { AddPostState, ADD_POST, DELETE_POST,  DeletePostState} from '../types';
 
-const initialState: LogInStatus = {
-  status: false
+const initialState: AddPostState = {
+  posts: [],
 };
 
-export const loginReducer = (state = initialState, action:any): LogInStatus => {
+const delState: DeletePostState = {
+  id: 0,
+};
+
+export function addPostReducer(state = initialState, action: any): AddPostState {
   switch (action.type) {
-    case LogInActionTypes.LOGOUT_LOGIN:
+    case ADD_POST:
       return {
         ...state,
-        status: false
-      };
-    case LogInActionTypes.SUCCESS_LOGIN:
-      return {
-        ...state,
-        status: true
+        posts: [...state.posts, action.payload],
       };
     default:
       return state;
   }
-};
+}
+
+export function deletePostReducer(state = delState, action: any): DeletePostState {
+  switch (action.type) {
+    case DELETE_POST:
+      return {
+        ...state, 
+      };
+    default:
+      return state;
+  }
+}
