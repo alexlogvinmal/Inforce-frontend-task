@@ -1,5 +1,5 @@
 # Inforce frontend task
-
+blob:https://xn--80affa3aj0al.xn--80asehdb/83e6b75e-1083-40b9-bad5-616e50ff26ba
 ###### Actual task
 
 We need to build a product list web app. The goal is to simulate a shop app.
